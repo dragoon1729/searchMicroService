@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
-public class MokitoServiceTester {
+public class MockitoServiceTester {
     @InjectMocks
     SolrServiceImpl service;
     @Mock
@@ -27,6 +27,7 @@ public class MokitoServiceTester {
         Mockito.when(repository.save((Mockito.any(Product.class)))).thenReturn(product);
         Product product1=service.save(new Product());
         Assert.assertNotNull(product1);
+        Mockito.verify(repository).save(Mockito.any(Product.class));
     }
     @Test
     public void testSearchByCategory()
@@ -36,6 +37,7 @@ public class MokitoServiceTester {
         Mockito.when(repository.findByNameOrCategory(Mockito.any(String.class),Mockito.any(String.class))).thenReturn(productList);
         List<Product> products=repository.findByNameOrCategory("mobile","mobile");
         Assert.assertTrue(products.size()!=0);
+        Mockito.verify(repository).findByNameOrCategory(Mockito.anyString(),Mockito.anyString());
     }
     @Test
     public  void testSearch()
@@ -45,6 +47,6 @@ public class MokitoServiceTester {
         Mockito.when(repository.findByCustomQuery(Mockito.any(String.class))).thenReturn(productList);
         List<Product> products=repository.findByCustomQuery("iphone6s");
         Assert.assertTrue(products.size()!=0);
-
+        Mockito.verify(repository).findByCustomQuery(Mockito.anyString());
     }
 }
