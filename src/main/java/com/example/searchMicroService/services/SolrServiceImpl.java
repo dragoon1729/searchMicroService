@@ -45,8 +45,8 @@ public class SolrServiceImpl implements SolrService {
     }
 
     @Override
-    public List<Product> findByNameOrCategory(String name, String category) {
-        return mySolrRepository.findByNameOrCategory(name,category);
+    public List<Product> findByCategory(String name, String category) {
+        return mySolrRepository.findByCategory(name,category);
     }
 
     @Override

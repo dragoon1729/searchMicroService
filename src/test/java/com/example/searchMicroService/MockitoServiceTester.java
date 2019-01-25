@@ -34,10 +34,10 @@ public class MockitoServiceTester {
     {
         List<Product> productList=new ArrayList<>();
         productList.add(new Product());
-        Mockito.when(repository.findByNameOrCategory(Mockito.any(String.class),Mockito.any(String.class))).thenReturn(productList);
-        List<Product> products=repository.findByNameOrCategory("mobile","mobile");
+        Mockito.when(repository.findByCategory(Mockito.any(String.class),Mockito.any(String.class))).thenReturn(productList);
+        List<Product> products=repository.findByCategory("mobile","mobile");
         Assert.assertTrue(products.size()!=0);
-        Mockito.verify(repository).findByNameOrCategory(Mockito.anyString(),Mockito.anyString());
+        Mockito.verify(repository).findByCategory(Mockito.anyString(),Mockito.anyString());
     }
     @Test
     public  void testSearch()

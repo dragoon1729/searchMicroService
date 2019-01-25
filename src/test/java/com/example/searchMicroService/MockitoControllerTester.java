@@ -38,13 +38,13 @@ public class MockitoControllerTester {
 
     @Test
     public void testgetByCategory() throws Exception {
-        Mockito.when(service.findByNameOrCategory("mobile","mobile")).thenReturn(new ArrayList<>());
+        Mockito.when(service.findByCategory("mobile","mobile")).thenReturn(new ArrayList<>());
         this.mvc.perform(
 
                 MockMvcRequestBuilders.get("/search/getByCategory").param("querypara","mobile")
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk());
-        Mockito.verify(service).findByNameOrCategory(Mockito.anyString(),Mockito.anyString());
+        Mockito.verify(service).findByCategory(Mockito.anyString(),Mockito.anyString());
     }
     @Test
     public void testsearchByName() throws Exception {

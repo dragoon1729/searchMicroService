@@ -14,6 +14,6 @@ public interface SolrService {
     Product update(Product product);
     void deleteById(String productId);
     List<Product> findByName(String name);
-    List<Product> findByNameOrCategory(String name,String category);
+    List<Product> findByCategory(String name,String category);
     List<Product> findByCustomQuery(String searchTerm);
 }

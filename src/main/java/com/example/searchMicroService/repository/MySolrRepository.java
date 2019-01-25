@@ -11,8 +11,7 @@ import java.util.List;
 public interface MySolrRepository extends SolrCrudRepository<Product, String> {
 
     List<Product> findByName(String name);
-    List<Product> findByNameOrCategory(String name,String category);
-    @Query("name:*?0* OR category:*?0*")
+    List<Product> findByCategory(String name,String category);
+    @Query("name:*?0*")
     List<Product> findByCustomQuery(String searchTerm);
-
 }

@@ -56,7 +56,7 @@ public class ProductDTO {
     public void setPrice(double price) {
         this.price = price;
     }
-   // private String id;
+//   private String id;
     private String productId;
     private String name;
     private String category;
@@ -64,7 +64,7 @@ public class ProductDTO {
     private String description;
     private String merchentId;
     private double price;
-//
+
 //    public String getId() {
 //        return id;
 //    }

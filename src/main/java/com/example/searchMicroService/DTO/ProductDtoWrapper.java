@@ -1,7 +1,4 @@
 package com.example.searchMicroService.DTO;
-
-import com.example.searchMicroService.entity.Product;
-
 import java.util.List;
 
 public class ProductDtoWrapper {
